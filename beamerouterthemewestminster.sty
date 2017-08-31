@@ -1,0 +1,24 @@
+\mode<presentation>
+\definecolor{universitycolor}{RGB}{100,6,56}
+% Frame title
+\defbeamertemplate*{frametitle}{westminster}[1][]
+{
+\vskip1cm%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0cm]{frametitle} 
+  \begin{tikzpicture}
+  \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,0);
+  \fill[universitycolor] (0,-5) rectangle(0.5,\the\paperheight);
+
+  	\fill[color=black] (3.05,0) rectangle(\the\paperwidth,2.5);
+   \ifx\insertframesubtitle\@empty%
+      {\node[anchor=west, white,font=\LARGE] at (3.2,0.61){\insertframetitle};}
+      \else%
+      {\node[anchor= west, white,font=\large] at (3.2,0.81){\insertframetitle};%
+       \node[anchor= west, white,font=\large] at (3.2,0.41){\insertframesubtitle};}%
+    
+      \fi
+  \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\mode<all>

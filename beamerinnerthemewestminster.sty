@@ -1,0 +1,82 @@
+\mode<presentation>
+\usepackage{graphicx}
+\newcommand{\faculty}{Faculty of Science and Technology}
+\newcommand{\week}{Week Number : 1}
+%Can  be left empty
+\newcommand{\lecturer}{Lecturer Name: Lecturer Name}
+\newcommand{\term}{Semester 1 }
+\newcommand{\lecturedate}{\textbf{31/08/2017}}
+% re-definition of the title page
+
+\definecolor{universitycolor}{RGB}{100,6,56}
+\definecolor{grayy}{RGB}{224,224,224}
+\setbeamertemplate{caption}[numbered]
+
+\setbeamertemplate{itemize/enumerate body begin}{\LARGE}
+\setbeamertemplate{itemize/enumerate subbody begin}{\Large}
+\setbeamerfont{block title}{size=\Large}
+
+\setbeamerfont{block body}{size=\large}
+\setbeamerfont{block title example}{size=\Large}
+\setbeamerfont{block body alerted}{size=\large}
+\setbeamerfont{block body example}{size=\Large}
+
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+	\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	\fill[color=universitycolor] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+	\fill[color=white] (0,0) rectangle(2.95,1.9);
+	\fill[color=black] (4.5,0) rectangle(\the\paperwidth,1.9);
+    	    \node[inner sep=0] at (2,0.95) {\includegraphics[width=.25\textwidth]{logo.png}};
+	\ifnum\thepage>1\relax%
+	\fill[white,opacity=10] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	\fill[color=white] (0,0) rectangle(2.95,1.9);
+	\fill[color=black] (3.05,0) rectangle(30,0.5);
+	\fill[color=universitycolor] (0,0) rectangle(4,0.5);
+	\fill[universitycolor] (0,0) rectangle(0.5,\the\paperheight);
+	\node[inner sep=0] at (1.8,8.2) {\includegraphics[width=.15\textwidth]{logo.png}};
+	\fi
+	\end{tikzpicture}
+}
+
+\setbeamertemplate{title page}{
+	\centering
+	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,center]{author}
+		
+		\usebeamerfont{title}\inserttitle\par%
+		\insertsubtitle
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,center]{author}
+		
+		\insertauthor \\
+		\lecturer
+		
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,center]{author}
+		
+		% Either lecture date which is predefined in the preamble or today for the date the document is written
+		% \lecturedate \\
+		\today
+	\end{beamercolorbox}
+	
+	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,center]{author}
+		\begin{columns}
+			\begin{column}{3cm}
+				\week \\
+			\end{column}
+			\begin{column}{2cm}
+				\term
+			\end{column}
+		\end{columns}
+	\end{beamercolorbox}
+	
+	
+	\vskip0.8cm%
+	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,center]{author}
+		\faculty
+	\end{beamercolorbox}
+	
+}
+
+\mode
+<all>
